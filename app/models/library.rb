@@ -1,6 +1,6 @@
 class Library < ActiveRecord::Base
-  attr_accessible :title, :body, :user, :games
+  attr_accessible :user, :games
 
   belongs_to :user
-  has_many :game
+  has_many :games
 end

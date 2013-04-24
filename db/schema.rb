@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(:version => 20130423070808) do
   end
 
   create_table "game_reviews", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
     t.integer  "user_id"
     t.integer  "game_id"
     t.integer  "game_rating_id"
-    t.string   "title"
-    t.text     "body"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -65,35 +65,34 @@ ActiveRecord::Schema.define(:version => 20130423070808) do
 
   create_table "genres", :force => true do |t|
     t.string   "name"
-    t.integer  "game_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "libraries", :force => true do |t|
-    t.integer  "game_id"
+    t.integer  "games_id"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "profiles", :force => true do |t|
+    t.string   "display_name"
     t.text     "description"
     t.string   "avatar"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "display_name"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "date_of_birth"
+    t.date     "date_of_birth"
     t.string   "sex"
     t.integer  "library_id"
-    t.integer  "profiles_id"
+    t.integer  "profile_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
