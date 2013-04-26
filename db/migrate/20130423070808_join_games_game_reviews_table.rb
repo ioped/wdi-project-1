@@ -4,6 +4,7 @@ class JoinGamesGameReviewsTable < ActiveRecord::Migration
       t.references :game
       t.references :game_review
     end
+    add_index :games_game_reviews, [:game_id, :game_review_id], uniqueness: true
   end
 
   def down

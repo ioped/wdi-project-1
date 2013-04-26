@@ -1,4 +1,4 @@
-class GamesGameRatingsTable < ActiveRecord::Migration
+class JoinGamesGameRatingsTable < ActiveRecord::Migration
   def up
     create_table 'games_game_ratings', id: false do |t|
       t.references :game
