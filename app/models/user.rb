@@ -16,8 +16,12 @@ class User < ActiveRecord::Base
   before_save :set_password
 
   def self.authenticate(email, password)
-    user.find_by_email(email)
-
+    user = find_by_email(email)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    else
+      nil
+    end
   end
 
   private
@@ -28,19 +32,4 @@ class User < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, self.password_salt)
     end
   end
-
-
-
-
-
-  # around_save :salt_generate
-
-  # yield
-
-
-  # private
-  #   def salt_generate
-  #     :salt = SecureRandom.uuid
-  #   end
-
 end

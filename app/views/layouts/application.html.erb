@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>WdiProject1</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header style="color:white; background-color: blue">
-    <form method="post" action="/login">
-      <% if %>
-      <input type ="text"      name="email"     placeholder="enter your email"    >
-      <input type ="password"  name="password"  placeholder="enter your password" >
-      <input type ="submit"    value="Log In"                                     >
-    </form>
-  </header>
+  <head>
+    <title>WdiProject1</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header style="color:white; background-color: blue">
+      <div>
+        <% if current_user %>
+          <a href="logout">Log out</a>
+        <% else %>
+          <form method="post" action="/login">
+            <input type ="text"      name="email"     placeholder="enter your email"    >
+            <input type ="password"  name="password"  placeholder="enter your password" >
+            <input type ="submit"    value="Log In"                                     >
+          </form>
+        <% end %>
+      </div>
+    </header>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
+  </body>
 </html>
-

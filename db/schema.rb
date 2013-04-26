@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423070808) do
+ActiveRecord::Schema.define(:version => 20130426124909) do
 
   create_table "game_ratings", :force => true do |t|
     t.integer  "user_id"
@@ -64,15 +64,15 @@ ActiveRecord::Schema.define(:version => 20130423070808) do
 
   add_index "games_genres", ["game_id", "genre_id"], :name => "index_games_genres_on_game_id_and_genre_id"
 
-  create_table "genres", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "games_users", :id => false, :force => true do |t|
+    t.integer "game_id"
+    t.integer "user_id"
   end
 
-  create_table "libraries", :force => true do |t|
-    t.integer  "games_id"
-    t.integer  "user_id"
+  add_index "games_users", ["game_id", "user_id"], :name => "index_games_users_on_game_id_and_user_id"
+
+  create_table "genres", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

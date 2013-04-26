@@ -2,12 +2,12 @@ class SiteController < ApplicationController
   before_filter :authorize, except: [:index, :login]
 
   def index
-    if current_user
-      @games = @current_user.games
-      @rating = GameRating.new
-    else
-      render '/signup'
-    end
+    # if current_user
+    #   @games = @current_user.games
+    #   @rating = GameRating.new
+    # else
+    #   render 'signup'
+    # end
   end
 
   def login
@@ -25,5 +25,6 @@ class SiteController < ApplicationController
   def logout
     session[:user_id] = nil
 
+    redirect_to root_path
   end
 end

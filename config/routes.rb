@@ -3,6 +3,8 @@ WdiProject1::Application.routes.draw do
   post "login" => "site#login", :as => :login
   get "logout" => "site#logout", :as => :logout
 
+  get "signup" => "site#signup"
+
   get '/list' => 'games#list'
   
   put '/add' => 'games#add'

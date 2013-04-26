@@ -9,7 +9,6 @@
 User.destroy_all
 Profile.destroy_all
 Game.destroy_all
-Library.destroy_all
 Genre.destroy_all
 GameReview.destroy_all
 GameRating.destroy_all
@@ -23,7 +22,7 @@ u6  =  User.create first_name: "James"  , last_name: "Willock"  , email: "jamesw
 u7  =  User.create first_name: "Juan"   , last_name: "Pardini"  , email: "jfpardini@gmail.com"    , sex: "male"   , date_of_birth: "10/05/1988", password: "789", password_confirmation: "789"
 u8  =  User.create first_name: "Sam"    , last_name: "Leach"    , email: "sameleach@gmail.com"    , sex: "male"   , date_of_birth: "21/02/1979", password: "321", password_confirmation: "321"
 u9  =  User.create first_name: "Charles", last_name: "Munat"    , email: "charlesmunat@gmail.com" , sex: "male"   , date_of_birth: "25/12/1959", password: "432", password_confirmation: "432"
-u10 =  User.create first_name: "Soner"  , last_name: "Ozenc"    , email: "sonerozenc@gmail.com"   , sex: "male"   , date_of_birth: "40/02/1981", password: "543", password_confirmation: "543"
+u10 =  User.create first_name: "Soner"  , last_name: "Ozenc"    , email: "sonerozenc@gmail.com"   , sex: "male"   , date_of_birth: "04/02/1981", password: "543", password_confirmation: "543"
 
 p1  = Profile.create display_name: "kimsze"         , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
 p2  = Profile.create display_name: "maltezpedro"    , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
