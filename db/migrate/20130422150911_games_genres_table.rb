@@ -4,6 +4,7 @@ class GamesGenresTable < ActiveRecord::Migration
       t.references :game
       t.references :genre
     end
+    add_index :games_game_ratings, [:game_id, :genre_id], uniqueness: true
   end
 
   def down
