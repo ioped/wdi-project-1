@@ -4,7 +4,7 @@ class CreateGameRatings < ActiveRecord::Migration
       t.references :user
       t.references :game
       t.references :game_review
-      t.integer :rating
+      t.integer    :rating
       t.references :user
       t.references :game
       t.references :game_review

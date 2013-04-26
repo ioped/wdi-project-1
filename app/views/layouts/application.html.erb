@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header style="color:white; background-color: blue">
+    <form method="post" action="/login">
+      <% if %>
+      <input type ="text"      name="email"     placeholder="enter your email"    >
+      <input type ="password"  name="password"  placeholder="enter your password" >
+      <input type ="submit"    value="Log In"                                     >
+    </form>
+  </header>
 
 <%= yield %>
 
 </body>
 </html>
+

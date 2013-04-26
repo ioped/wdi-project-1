@@ -8,12 +8,16 @@ gem 'rails', '3.2.13'
 gem 'postgres-pr'
 gem 'pg'
 
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development do
   gem "better_errors"
+  gem "binding_of_caller"
 end
 
-gem "binding_of_caller"
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

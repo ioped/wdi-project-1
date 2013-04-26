@@ -76,6 +76,11 @@ ActiveRecord::Schema.define(:version => 20130423070808) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "opinions", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "profiles", :force => true do |t|
     t.string   "display_name"
     t.text     "description"
@@ -91,7 +96,6 @@ ActiveRecord::Schema.define(:version => 20130423070808) do
     t.string   "last_name"
     t.date     "date_of_birth"
     t.string   "sex"
-    t.integer  "library_id"
     t.integer  "profile_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false

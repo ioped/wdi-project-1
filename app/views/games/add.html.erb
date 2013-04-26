@@ -1,0 +1,21 @@
+<%= form_for(@game) do |f| %>
+  <div class="field">
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field" >
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field" >
+    <%= f.label :poster_url %>
+    <%= f.text_field :poster_url %>
+  </div>
+  <div class="field" >
+    <%= f.label :background_url %>
+    <%= f.text_field :background_url %>
+  </div>
+  <div class="actions" >
+    <%= f.submit %>
+  </div>
+<% end %>

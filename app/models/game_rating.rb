@@ -1,7 +1,7 @@
-class GameRating < Opinion
-  attr_accessible :rating, :game, :game_review, :opinions
+class GameRating < ActiveRecord::Base
+  attr_accessible :rating, :user, :game, :game_review
 
-  belongs_to :user, through: :opinions
+  belongs_to :user
   belongs_to :game
   belongs_to :game_review
 end

@@ -1,5 +1,5 @@
 class GameReview < ActiveRecord::Base
-  attr_accessible :body, :title, :game_rating
+  attr_accessible :title, :body, :user, :game, :game_rating
 
   belongs_to :user
   belongs_to :game
