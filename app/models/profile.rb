@@ -1,6 +1,5 @@
 class Profile < ActiveRecord::Base
-  attr_accessible :avatar, :description, :display_name, :user, :opinions
+  attr_accessible :avatar, :description, :display_name, :user
 
-  has_many :opinions
   belongs_to :user
 end

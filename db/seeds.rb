@@ -75,18 +75,18 @@ g26 = Game.create name: "Braid"                 , description: "The greatest gam
 g27 = Game.create name: "Magicka"               , description: "The greatest game on earth.", poster: "http://placesheen.com/400/500", background: "http://placehold.it/1200x800"
 g28 = Game.create name: "Sideway"               , description: "The greatest game on earth.", poster: "http://placesheen.com/400/500", background: "http://placehold.it/1200x800"
 g29 = Game.create name: "Prototype"             , description: "The greatest game on earth.", poster: "http://placesheen.com/400/500", background: "http://placehold.it/1200x800"
-g30 = Game.create name: "League of Legends"     , description: "Dota like thing."           , poster: "http://placesheen.com/400/500", background: "http://placehold.it/1200x800"
+g30 = Game.create name: "League of Legends"     , description: "DotA like thing."           , poster: "http://placesheen.com/400/500", background: "http://placehold.it/1200x800"
 
-u1.games  = [ g2  , g4  , g6                                                          ]
-u2.games  = [ g1  , g5  , g10  , g15  , g16  , g17  , g20  , g22  , g25  , g28  , g29 ]
-u3.games  = [ g2  , g4  , g6   , g10  , g11  , g13  , g14  , g30                      ]
-u4.games  = [ g2  , g4  , g6   , g21                                                  ]
-u5.games  = [ g1  , g3  , g6   , g18  , g19  , g26                                    ]
-u6.games  = [ g2  , g4  , g6   , g10  , g15  , g27  , g29                             ]
-u7.games  = [ g2  , g4  , g6   , g7   , g8   , g9   , g10                             ]
-u8.games  = [ g2  , g3  , g4   , g5   , g6   , g7   , g9   , g13  , g19  , g21        ]
-u9.games  = [ g2  , g4  , g6   , g10  , g15  , g20  , g25                             ]
-u10.games = [ g2  , g4  , g6   , g10  , g16  , g20  , g23                             ]
+u1.games  << [ g2  , g4  , g6                                                          ]
+u2.games  << [ g1  , g5  , g10  , g15  , g16  , g17  , g20  , g22  , g25  , g28  , g29 ]
+u3.games  << [ g2  , g4  , g6   , g10  , g11  , g13  , g14  , g30                      ]
+u4.games  << [ g2  , g4  , g6   , g21                                                  ]
+u5.games  << [ g1  , g3  , g6   , g18  , g19  , g26                                    ]
+u6.games  << [ g2  , g4  , g6   , g10  , g15  , g27  , g29                             ]
+u7.games  << [ g2  , g4  , g6   , g7   , g8   , g9   , g10                             ]
+u8.games  << [ g2  , g3  , g4   , g5   , g6   , g7   , g9   , g13  , g19  , g21        ]
+u9.games  << [ g2  , g4  , g6   , g10  , g15  , g20  , g25                             ]
+u10.games << [ g2  , g4  , g6   , g10  , g16  , g20  , g23                             ]
 
 gen1  = Genre.create name: "Platformer"
 gen2  = Genre.create name: "Action"

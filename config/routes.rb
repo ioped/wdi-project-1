@@ -1,5 +1,13 @@
 WdiProject1::Application.routes.draw do
 
+  get "opend_id/new"
+
+  get "opend_id/create"
+
+  get "opend_id/complete"
+
+  get "opend_id/openid_consumer"
+
   post "login" => "site#login", :as => :login
   get "logout" => "site#logout", :as => :logout
 

@@ -1,0 +1,2 @@
+module OpendIdHelper
+end
