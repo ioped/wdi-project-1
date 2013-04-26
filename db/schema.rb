@@ -48,20 +48,21 @@ ActiveRecord::Schema.define(:version => 20130423070808) do
     t.integer "game_rating_id"
   end
 
+  add_index "games_game_ratings", ["game_id", "game_rating_id"], :name => "index_games_game_ratings_on_game_id_and_game_rating_id"
+
   create_table "games_game_reviews", :id => false, :force => true do |t|
     t.integer "game_id"
     t.integer "game_review_id"
   end
+
+  add_index "games_game_reviews", ["game_id", "game_review_id"], :name => "index_games_game_reviews_on_game_id_and_game_review_id"
 
   create_table "games_genres", :id => false, :force => true do |t|
     t.integer "game_id"
     t.integer "genre_id"
   end
 
-  create_table "games_libraries", :id => false, :force => true do |t|
-    t.integer "game_id"
-    t.integer "library_id"
-  end
+  add_index "games_genres", ["game_id", "genre_id"], :name => "index_games_genres_on_game_id_and_genre_id"
 
   create_table "genres", :force => true do |t|
     t.string   "name"
@@ -72,11 +73,6 @@ ActiveRecord::Schema.define(:version => 20130423070808) do
   create_table "libraries", :force => true do |t|
     t.integer  "games_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "opinions", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -96,6 +92,8 @@ ActiveRecord::Schema.define(:version => 20130423070808) do
     t.string   "last_name"
     t.date     "date_of_birth"
     t.string   "sex"
+    t.string   "password_salt"
+    t.string   "password_hash"
     t.integer  "profile_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
