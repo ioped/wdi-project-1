@@ -17,6 +17,8 @@ end
 
 gem 'ruby-openid'
 
+gem 'chart-js-rails'
+
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'

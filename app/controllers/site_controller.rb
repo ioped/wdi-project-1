@@ -11,7 +11,7 @@ class SiteController < ApplicationController
   end
 
   def login
-    if User.authenticate(params[:email], params[:password])
+    if user = User.authenticate(params[:email], params[:password])
       session[:user_id] = user.id
 
       redirect_to root_url

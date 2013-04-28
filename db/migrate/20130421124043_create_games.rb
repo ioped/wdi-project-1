@@ -5,7 +5,7 @@ class CreateGames < ActiveRecord::Migration
       t.string :poster
       t.string :background
       t.text :description
-      t.string :steam_id
+      t.string :steam_game_id
       t.references :game_ratings
       t.references :game_reviews
 

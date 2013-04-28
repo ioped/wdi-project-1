@@ -1,0 +1,17 @@
+
+<% @games.first(10).each do |game| %>
+<div style="background-color: #a0a0a0">
+  <p> Name: <%= game.name %> </p>
+  <p> Description: <%= game.description %> </p>
+  <div class="steamid">
+    <% if game.steam_id? %>
+      <div style="background-color: yellow">
+        <a href="http://store.steampowered.com/app/<%= game.steam_game_id %>/"> <%= game.name %> at Steam </a>
+      </div>
+    <% end %>
+  </div>
+  <div class="game_poster">
+    <img src="<%= game.poster %>" width=100px>
+  </div>
+</div>
+<% end %>

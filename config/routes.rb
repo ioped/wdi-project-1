@@ -13,9 +13,11 @@ WdiProject1::Application.routes.draw do
 
   get "signup" => "site#signup"
 
-  get '/list' => 'games#list'
+  get '/games' => 'games#index'
   
   put '/add' => 'games#add'
+
+  get '/account' => 'users#account'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

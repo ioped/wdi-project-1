@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-  attr_accessible :background, :description, :name, :poster, :game_ratings, :game_reviews, :genres, :steam_id
+  attr_accessible :background, :description, :name, :poster, :game_ratings, :game_reviews, :genres, :steam_game_id
 
   has_and_belongs_to_many :genres
   has_and_belongs_to_many :users
