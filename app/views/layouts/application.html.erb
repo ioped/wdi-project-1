@@ -26,14 +26,7 @@
                 <form class="navbar-search pull-left">
                   <input type="text" class="search-query" placeholder="Search">
                 </form>
-                <a class="btn pull-right" id="logout-btn" href="logout">Log out</a>
-              <% else %>
-                <form class="navbar-form pull-right" accept-charset="UTF-8" method="post" action="/login">
-                  <input name="_method" type="hidden" value="put" />
-                  <input type ="text"      name="email"     placeholder="enter your email"    >
-                  <input type ="password"  name="password"  placeholder="enter your password" >
-                  <button type ="submit"   class="btn"     >Log In</button>
-                </form>
+                <a class="btn pull-right" id="logout_btn" href="logout">Log out</a>
               <% end %>
             </div>
           </div>

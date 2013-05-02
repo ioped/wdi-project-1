@@ -1,15 +1,12 @@
-<% if current_user %>
-
-  <div class="row">
-    <%= render partial: 'welcome_screen' %>
-    <%= render partial: 'game_sidebar' %>
-  </div>
-  
-<% else %>
-  <div class="pull-left">
-    <h1>Please log in</h1>
-  </div>
-  <div class="pull-right">
-    <p>or register</p>
-  </div>
-<% end %>
+<div id="everything">
+  <% if current_user %>
+    <div class="row">
+      <%= render partial: 'welcome_screen' %>
+      <%= render partial: 'game_sidebar' %>
+    </div>
+  <% else %>
+    <div>
+      <%= render partial: 'hello_stranger' %>
+    </div>
+  <% end %>
+</div>

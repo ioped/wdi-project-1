@@ -9,3 +9,51 @@
 .brand {
   padding-left: 20px;
 }
+
+
+ul {
+  list-style-type: none;
+  padding:0;
+  margin:0;
+}
+
+
+.centered-object {
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  background-color: #192640;
+  color: #BFBFB0;
+}
+
+a {
+  color: #EFF294;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #192640;
+  background-color: #7D7D73;
+}
+
+a:visited {
+  color: #87557A;
+}
+
+#game_sidebar {
+    float: right;
+    margin: 0;
+    width:180px;
+    height:500px;
+    padding:10px 5px;
+    overflow: auto;
+}
+
+
+@media all and (max-width: 900px) {
+  .game-list-container {
+    display: none;
+  }
+}

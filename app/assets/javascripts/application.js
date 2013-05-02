@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= chart_loader
 //= require_tree .
 
 $(function() {
@@ -56,7 +55,7 @@ $(function() {
       url: $(this)[0].href,
       dataType: 'html',
       success: function(detail) {
-        $('#main-area').html(detail);
+        $('#main_area').html(detail);
       }
     });
     return false;
@@ -68,7 +67,7 @@ $(function() {
       url: '/games/list',
       dataType: 'html',
       success: function(list) {
-        $('#game_container').html(list);
+        $('#game_sidebar').html(list);
         $('.gamejax').on('click', show_game_detail);
       }
     });
@@ -79,18 +78,15 @@ $(function() {
 
   var do_the_chart = function() {
     //Get context with jQuery - using jQuery's .get() method.
-    var ctx = $("#home-chart").get(0).getContext("2d");
+    var ctx = $("#home_chart").get(0).getContext("2d");
     //This will get the first returned node in the jQuery collection.
     var myNewChart = new Chart(ctx);
 
-    new Chart(ctx).Line(home_chart_data);
+    new Chart(ctx).Line(home_chart_data, {scaleFontColor: "#BFBFB0", scaleGridLineColor : "rgba(135,85,122,.2)"});
 
   };
 
   do_the_chart();
-
-//chartloaderfunctiongoeshere
-
 
 
   var display_home = function() {
@@ -103,18 +99,28 @@ $(function() {
         // console.log(a);
         // console.log(b);
         // console.log(c);
-        $('#main-area').html(main);
+        $('#main_area').html(main);
         do_the_chart();
       }
     });
     return false;
   };
 
+  var show_signup_form = function() {
+    $.ajax({
+      method: 'GET',
+      url: $(this)[0].href,
+      dataType: 'html',
+      success: function(form) {
+        $('#everything').html(form);
+      }
+    });
+    return false;
+  };
 
   $('#home').on('click', display_home );
+  $('#user_signup_link').on('click', show_signup_form);
   $('.gamejax').on('click', show_game_detail);
-
-
 
 });
 

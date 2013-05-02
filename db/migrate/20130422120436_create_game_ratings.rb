@@ -5,11 +5,9 @@ class CreateGameRatings < ActiveRecord::Migration
       t.references :game
       t.references :game_review
       t.integer    :rating
-      t.references :user
-      t.references :game
-      t.references :game_review
 
       t.timestamps
     end
+    add_index :game_id, :game_rating_id, uniqueness: true
   end
 end

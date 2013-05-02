@@ -12,6 +12,11 @@ WdiProject1::Application.routes.draw do
   get  "/games/:id"  => "site#game_detail"     , :as => :game_detail
 
   get  "/welcome"    => "site#welcome_screen"
+  get  "/hello"      => "site#hello_stranger"  , :as => :hello_stranger
+
+
+  get  "/users"      => "users#index"          , :as => :users
+  post "/users"      => "users#create"         , :as => :users_create
 
   # get "/users" => "users#index"
   # get "/users/:id" => "site#users_" :as => :

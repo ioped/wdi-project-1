@@ -1,15 +1,10 @@
 class SiteController < ApplicationController
-  before_filter :authorize, except: [:index, :login]
+  before_filter :authorize, except: [:index, :login, :signup]
 
   def index
-    # if current_user
-    #   @games = @current_user.games
-    #   @rating = GameRating.new
-    # else
-    #   render 'signup'
-    # end
 
-    @games = Game.all
+    @games = Game.all.sort
+
   end
 
   def login
@@ -58,6 +53,17 @@ class SiteController < ApplicationController
     render :partial => 'profile_page', layout: false
   end
 
+  def hello_stranger
+
+    @user = User.new
+
+  end
+
+  def signup
+    @user = User.new
+
+    render :partial => 'signup', layout: false
+  end
 end
 
 
