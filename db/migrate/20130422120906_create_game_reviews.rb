@@ -9,5 +9,7 @@ class CreateGameReviews < ActiveRecord::Migration
 
       t.timestamps
     end
+      # add_index :game_reviews, :game_id, uniqueness: true
+      # add_index :game_ratings, :game_id, uniqueness: true
   end
 end

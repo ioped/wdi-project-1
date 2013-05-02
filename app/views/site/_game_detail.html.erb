@@ -1,0 +1,37 @@
+<div class="game-detail">
+  <div class="game-name">
+    <h2><%= @game.name %></h2>
+  </div>
+  <% if @game.steam_game_id %>
+    <div class="game-steamid">
+      <a href="http://store.steampowered.com/app/<%= @game.steam_game_id %>">Check out <%= @game.name %> on Steam!</a>
+    </div>
+  <% end %>
+  <div class="game-description pull-right" >
+    <p> <%= @game.description %> </p>
+  </div>
+  <div id="game_poster">
+    <img src="<%= @game.poster %>" width=200px>
+  </div>
+  <ul>
+    <% @game.game_reviews.each do |grev| %>
+      <ul>
+        <li>
+          <div class="review-reviewer-name"> <%= grev.user.profile.display_name %> </div>
+        </li>
+        <li>  
+          <div class="review-rating"> <%= grev.game_rating.rating %> </div>
+        </li>
+        <li>  
+          <div class="review-title" > <%= grev.title %> </div>
+        </li>
+        <li>
+          <div class="review-body"> <%= grev.body %> </div>
+        </li>
+      </ul>
+    <% end %>
+  </ul>
+</div>
+
+
+

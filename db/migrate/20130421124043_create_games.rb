@@ -11,5 +11,7 @@ class CreateGames < ActiveRecord::Migration
 
       t.timestamps
     end
+      add_index :games, :game_reviews_id, uniqueness: true
+      add_index :games, :game_ratings_id, uniqueness: true
   end
 end

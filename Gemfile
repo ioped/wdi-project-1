@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+require 'rubygems'
+
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -8,6 +10,11 @@ gem 'rails', '3.2.13'
 gem 'postgres-pr'
 gem 'pg'
 
+
+gem 'json'
+gem 'rest-client'
+
+
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development do
@@ -15,9 +22,8 @@ group :development do
   gem "binding_of_caller"
 end
 
-gem 'ruby-openid'
-
-gem 'chart-js-rails'
+# gem 'ruby-openid'
+gem 'steam-condenser'
 
 gem 'therubyracer'
 gem 'less-rails'

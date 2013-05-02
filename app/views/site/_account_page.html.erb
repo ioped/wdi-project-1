@@ -1,32 +1,32 @@
+ip_details = JSON.parse(RestClient.get('http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=47759AFAA400BE100A45F20F9A918C3E&steamid=76561198054201790'))
+
+
+
+
 <h1>My account</h1>
 
 <div class="tabbable tabs-right">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#tab1" data-toggle="tab">Overview</a></li>
-    <li><a href="#tab2" data-toggle="tab">Profile</a></li>
+    <li><a href="#tab2" data-toggle="tab">Section 2</a></li>
     <li><a href="#tab3" data-toggle="tab">Settings</a></li>
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
       <p>I'm in Section 1.</p>
-      <p>Change email</p>
-      <p>alo</p>
     </div>
     <div class="tab-pane" id="tab2">
-      <div class="profile-update-form">
-        <form method="put" action="/update_user_profile">
-          <input type ="text"      name="display_name"     placeholder="enter your email" >
-          <input type ="password"  name="password"  placeholder="enter your password"     >
-          <button type ="submit"   class="btn"     >Update Profile</button>
-        </form>
-      </div>
+      <p>Blah blah blah Section 2.</p>
     </div>
     <div class="tab-pane" id="tab3">
       <p>Settings</p>
       <p>Link your steam account.</p>
       <p>What is your steam profile name?</p>
-
-      <p>Change your password</p>
+      <%= form_for(@user) do |f| %>
+        <%= f.label :usersteamid %>:
+        <%= f.text_field :usersteamid %>
+        <%= f.submit %>
+      <% end %>
     </div>
   </div>
 </div>

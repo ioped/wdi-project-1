@@ -1,3 +1,15 @@
-<h1>Please log in</h1>
+<% if current_user %>
 
-<canvas id="canvas" height="450" width="600">myNewChart</canvas>
+  <div class="row">
+    <%= render partial: 'welcome_screen' %>
+    <%= render partial: 'game_sidebar' %>
+  </div>
+  
+<% else %>
+  <div class="pull-left">
+    <h1>Please log in</h1>
+  </div>
+  <div class="pull-right">
+    <p>or register</p>
+  </div>
+<% end %>

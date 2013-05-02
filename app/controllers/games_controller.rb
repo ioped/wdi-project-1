@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
+  before_filter :authorize
 
   def index
-    @games = Game.all
+    @games = Game.all.sort
 
     render json: @games
   end
@@ -10,7 +11,10 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
-  def list
-    @games = Game.all.sort
+  def show
+    @game = Game.find(params[:id])
+
+    render json: @game
   end
+
 end

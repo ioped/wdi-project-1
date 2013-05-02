@@ -37,12 +37,15 @@ ActiveRecord::Schema.define(:version => 20130426124909) do
     t.string   "poster"
     t.string   "background"
     t.text     "description"
-    t.string   "steam_id"
+    t.string   "steam_game_id"
     t.integer  "game_ratings_id"
     t.integer  "game_reviews_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  add_index "games", ["game_ratings_id"], :name => "index_games_on_game_ratings_id"
+  add_index "games", ["game_reviews_id"], :name => "index_games_on_game_reviews_id"
 
   create_table "games_genres", :id => false, :force => true do |t|
     t.integer "game_id"

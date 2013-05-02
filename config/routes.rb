@@ -1,23 +1,22 @@
 WdiProject1::Application.routes.draw do
 
-  get "opend_id/new"
+  put  "/login"      => "site#login"           , :as => :login
+  get  "/logout"     => "site#logout"          , :as => :logout
+  get  "/account"    => "users#account"
+  get  "/signup"     => "site#signup"          , :as => :signup
 
-  get "opend_id/create"
+  put  "/add"        => "games#add"
 
-  get "opend_id/complete"
+  get  "/games"      => "games#index"
+  get  "/games/list" => "site#game_list"       , :as => :game_list
+  get  "/games/:id"  => "site#game_detail"     , :as => :game_detail
 
-  get "opend_id/openid_consumer"
+  get  "/welcome"    => "site#welcome_screen"
 
-  post "login" => "site#login", :as => :login
-  get "logout" => "site#logout", :as => :logout
+  # get "/users" => "users#index"
+  # get "/users/:id" => "site#users_" :as => :
 
-  get "signup" => "site#signup"
-
-  get '/games' => 'games#index'
-  
-  put '/add' => 'games#add'
-
-  get '/account' => 'users#account'
+  # put "/user_profile" => ""
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -68,7 +67,7 @@ WdiProject1::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'site#index'
+  root :to => "site#index"
 
   # See how all your routes lay out with "rake routes"
 
