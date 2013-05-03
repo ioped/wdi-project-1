@@ -11,7 +11,7 @@ class SiteController < ApplicationController
     if user = User.authenticate(params[:email], params[:password])
       session[:user_id] = user.id
 
-      redirect_to root_url
+      redirect_to root_url, :notice => "Logged in!"
     else
       flash.now.alert = "Invalid email or password"
 
@@ -22,7 +22,7 @@ class SiteController < ApplicationController
   def logout
     session[:user_id] = nil
 
-    redirect_to root_path
+    redirect_to root_url, :notice => "Logged out!"
   end
 
   def welcome_screen

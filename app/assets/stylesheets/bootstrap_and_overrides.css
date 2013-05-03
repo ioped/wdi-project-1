@@ -18,10 +18,7 @@ ul {
 }
 
 
-.centered-object {
-  margin: 0 auto;
-  text-align: center;
-}
+
 
 body {
   background-color: #192640;
@@ -43,14 +40,29 @@ a:visited {
 }
 
 #game_sidebar {
-    float: right;
-    margin: 0;
-    width:180px;
-    height:500px;
-    padding:10px 5px;
-    overflow: auto;
+  float: right;
+  margin: 0;
+  width:180px;
+  height:500px;
+  padding:10px 5px;
+  overflow: auto;
 }
 
+.centered-object {
+  margin: 0 auto;
+  width: 250px;
+  text-align: center;
+}
+
+.top-padded-form {
+  padding-top: 20px;
+}
+
+/*.entire-form {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #BFBFB0;
+}*/
 
 @media all and (max-width: 900px) {
   .game-list-container {

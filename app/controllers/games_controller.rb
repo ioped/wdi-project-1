@@ -16,5 +16,4 @@ class GamesController < ApplicationController
 
     render json: @game
   end
-
 end

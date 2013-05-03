@@ -1,17 +1,13 @@
-<%= form_for(@user) do |f| %>
-  <div>
-    <%= f.label :email, "Email Address" %>:<br>
-    <%= f.text_field :email %>
-  </div><br>
-  <div>
-    <%= f.label :password %>:
-    <%= f.password_field :password %><br>
-  </div><br>
-  <div>
-    <%= f.label :password_confirmation, "Confirm Password" %>:
-    <%= f.password_field :passsword_confirmation %>
-  </div><br>
-  <div>
-    <%= f.submit (@user.new_record? ? "Sign up" : "Update") %>
-  </div>
-<% end %>
+
+
+<div class="centered-object signup-form top-padded-form entire-form">
+
+  <form accept-charset="UTF-8" method="put" action="/users">
+    <div>
+      <input type ="text"      name="display_name"           placeholder="darth@vader.fm"   ><br>
+      <input type ="password"  name="password"               placeholder="iamyourfather"      ><br>
+      <input type ="password"  name="password_confirmation"  placeholder="itrulyamyourfather" ><br>
+      <button type ="submit"   class="btn"       >Join the Dark Side</button>
+    </div>
+  </form>
+</div>

@@ -16,6 +16,7 @@ WdiProject1::Application.routes.draw do
 
 
   get  "/users"      => "users#index"          , :as => :users
+  get  "/users/:id"  => "users#show"
   post "/users"      => "users#create"         , :as => :users_create
 
   # get "/users" => "users#index"

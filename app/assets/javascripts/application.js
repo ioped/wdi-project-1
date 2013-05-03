@@ -86,7 +86,6 @@ $(function() {
 
   };
 
-  do_the_chart();
 
 
   var display_home = function() {
@@ -112,15 +111,36 @@ $(function() {
       url: $(this)[0].href,
       dataType: 'html',
       success: function(form) {
-        $('#everything').html(form);
+        $('#directions_to_stranger').html("<h1>Create an account</h1>");
+        $('#login_screen').html(form);
+        $('#login_screen').attr('id','#signup_screen');
       }
     });
     return false;
   };
 
+  // var show_login_form = function() {(
+  //   $.ajax({
+  //     method: 'GET',
+  //     url: $(this)[0].href,
+  //     dataType: 'html',
+  //     success: function(form) {
+  //       $('#directions_to_stranger').html("<h1>Please log in</h1>");
+  //       $('#signup_screen').html(form);
+  //       $('#signup_screen').attr('id','#signup_screen');
+  //     }
+  //   });
+  //   return false;
+  // };
+
   $('#home').on('click', display_home );
   $('#user_signup_link').on('click', show_signup_form);
+  $('#user_login_link').on('click', show_login_form);
   $('.gamejax').on('click', show_game_detail);
+
+  do_the_chart();
+
+  // $.getJSON("/search?address=" + address + "&format=json"
 
 });
 

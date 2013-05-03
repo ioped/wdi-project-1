@@ -5,9 +5,11 @@ class User < ActiveRecord::Base
 
   attr_accessor :password
 
-  has_one                 :profile
   has_one                 :usersteam
   has_one                 :usersteam64id
+  has_one                 :steamid
+  has_one                 :steam64id
+  has_one                 :description
   has_and_belongs_to_many :games
   has_many                :game_reviews, through: :games
   has_many                :game_ratings, through: :games
