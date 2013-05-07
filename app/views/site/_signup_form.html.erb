@@ -1,0 +1,15 @@
+<%= form_for(@user, url: signup_url ) do |f| %>
+  <%= f.label :email%>
+  <%= f.text_field :email, placeholder: "darthvader@vader.fm" %>
+
+  <%= f.label :display_name %>
+  <%= f.text_field :display_name, placeholder: "darthvader" %>
+  
+  <%= f.label :password %>
+  <%= f.password_field :password, placeholder: "iamyourfather"%>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, placeholder: "itrulyamyourfather" %><br>
+  
+  <%= f.submit value: "Join the Dark Side", class: "btn" %>
+<% end %>

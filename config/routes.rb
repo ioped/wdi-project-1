@@ -1,83 +1,72 @@
 WdiProject1::Application.routes.draw do
 
-  put  "/login"      => "site#login"           , :as => :login
-  get  "/logout"     => "site#logout"          , :as => :logout
-  get  "/account"    => "users#account"
-  get  "/signup"     => "site#signup"          , :as => :signup
+  ###############################
+  #####     SITE ROUTES     #####
+  ###############################
 
-  put  "/add"        => "games#add"
+  put  "/login"              => "site#login"           , :as => :login
+  get  "/login_form"         => "site#user_login"      , :as => :user_login
+  get  "/logout"             => "site#logout"          , :as => :logout
+  get  "/account"            => "users#account"
+  get  "/signup"             => "site#signup"          , :as => :signup
+  
 
-  get  "/games"      => "games#index"
-  get  "/games/list" => "site#game_list"       , :as => :game_list
-  get  "/games/:id"  => "site#game_detail"     , :as => :game_detail
+  get  "/games/list"         => "site#game_list"       , :as => :game_list
+  get  "/games/:id"          => "site#game_detail"     , :as => :game_detail
 
-  get  "/welcome"    => "site#welcome_screen"
-  get  "/hello"      => "site#hello_stranger"  , :as => :hello_stranger
+  get  "/welcome"            => "site#welcome_screen"
+  get  "/hello"              => "site#hello_stranger"  , :as => :hello_stranger
 
 
-  get  "/users"      => "users#index"          , :as => :users
-  get  "/users/:id"  => "users#show"
-  post "/users"      => "users#create"         , :as => :users_create
+  ###############################
+  ######   USER ROUTES   ########
+  ###############################
 
-  # get "/users" => "users#index"
-  # get "/users/:id" => "site#users_" :as => :
+  get     "/users"           => "users#index"    , as: :list_users
+  get     "/users/new"       => "users#new"      , as: :users
+  post    "/users"           => "users#create"   , as: :create_user
+  get     "/users/:id"       => "users#show"     , as: :user
+  get     "/users/:id/edit"  => "users#edit"     , as: :edit_user
+  put     "/users/:id"       => "users#update"
+  delete  "/users/:id"       => "users#destroy"  , as: :destroy_user
+  post    "/signup"          => "users#signup"   , as: :signup
 
-  # put "/user_profile" => ""
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  ###############################
+  ######    GAME ROUTES   #######
+  ###############################
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+  get     "/games"           => "games#index"
+  get     "/games/new"       => "games#new"      , as: :add_game
+  post    "/games"           => "games#create"   , as: :create_game
+  get     "/games/:id"       => "games#show"     , as: :show_game
+  get     "/games/:id/edit"  => "games#edit"     , as: :edit_game
+  put     "/games/:id"       => "games#update"   , as: :update_game
+  delete  "/games/:id"       => "games#destroy"  , as: :destroy_game
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  ###############################
+  ####  GAME RATING ROUTES  #####
+  ###############################
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  get "/game_ratings/new"
+  get "/game_ratings/create"
+  get "/game_ratings/edit"
+  get "/game_ratings/update"
 
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
 
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
+  ###############################
+  ####  GAME REVIEW ROUTES  #####
+  ###############################
 
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  get "game_reviews/new"
+  get "game_reviews/create"
+  get "game_reviews/show"
+  get "game_reviews/edit"
+  get "game_reviews/update"
+  get "game_reviews/destroy"
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
+
   root :to => "site#index"
 
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

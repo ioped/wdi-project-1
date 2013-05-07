@@ -1,0 +1,9 @@
+<%= form_for(@game_reviews) do |f| %>
+  <%= f.label :title%>
+  <%= f.text_field %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <%= f.label :rating %>
+  <%= f.select :rating, (1..10) %>
+  <%= f.submit %>
+<% end %>

@@ -1,15 +1,10 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  attr_accessible :date_of_birth, :email, :first_name, :last_name, :sex, :profile, :games, :steamid, :steam64id, :password, :password_confirmation, :display_name, :description
+  attr_accessible :date_of_birth, :email, :first_name, :last_name, :sex, :games, :steamid, :steam64id, :password, :password_confirmation, :display_name, :description, :avatar_url
 
   attr_accessor :password
 
-  has_one                 :usersteam
-  has_one                 :usersteam64id
-  has_one                 :steamid
-  has_one                 :steam64id
-  has_one                 :description
   has_and_belongs_to_many :games
   has_many                :game_reviews, through: :games
   has_many                :game_ratings, through: :games

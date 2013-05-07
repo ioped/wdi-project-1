@@ -7,13 +7,10 @@ class GamesController < ApplicationController
     render json: @games
   end
 
-  def new
-    @game = Game.new
-  end
-
   def show
     @game = Game.find(params[:id])
 
     render json: @game
   end
+
 end

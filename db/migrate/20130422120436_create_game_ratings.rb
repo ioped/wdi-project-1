@@ -8,6 +8,6 @@ class CreateGameRatings < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :game_id, :game_rating_id, uniqueness: true
+    # add_index :game_ratings, :game, uniqueness: true
   end
 end

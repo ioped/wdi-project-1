@@ -1,4 +1,5 @@
-<%= form_for(current_user) do |f| %>
+  <%= form_for(current_user) do |f| %>
+
     <%= f.label :email %>
     <%= f.text_field :email %>
 
@@ -23,6 +24,9 @@
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
 
+    <%= f.label :sex %>
+    <%= f.select :sex, range:['male', 'female', 'other'] %>
+
     <%= f.label :date_of_birth %>
     <%= f.text_field :date_of_birth %>
 
@@ -33,4 +37,5 @@
     <%= f.password_field :password_confirmation %><br>
 
     <%= f.submit "Save Changes", class: "btn" %>
-<% end %>
+    
+  <% end %>

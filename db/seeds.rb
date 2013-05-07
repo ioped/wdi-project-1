@@ -7,44 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-Profile.destroy_all
 Game.destroy_all
 Genre.destroy_all
 GameReview.destroy_all
 GameRating.destroy_all
 
-u1  =  User.create first_name: "Kim"    , last_name: "Szelong"  , email: "kimszelong@gmail.com"   , sex: "female" , date_of_birth: "20/07/1988", password: "123", password_confirmation: "123"
-u2  =  User.create first_name: "Pedro"  , last_name: "Maltez"   , email: "maltezpedro@gmail.com"  , sex: "male"   , date_of_birth: "01/01/1993", password: "234", password_confirmation: "234"
-u3  =  User.create first_name: "Rob"    , last_name: "Anderson" , email: "robanderson@gmail.com"  , sex: "male"   , date_of_birth: "12/06/1985", password: "345", password_confirmation: "345"
-u4  =  User.create first_name: "Toby"   , last_name: "Sims"     , email: "tobysims@gmail.com"     , sex: "male"   , date_of_birth: "23/10/1986", password: "456", password_confirmation: "456"
-u5  =  User.create first_name: "George" , last_name: "Gray"     , email: "georgegray@gmail.com"   , sex: "male"   , date_of_birth: "07/12/1981", password: "567", password_confirmation: "567"
-u6  =  User.create first_name: "James"  , last_name: "Willock"  , email: "jameswillock@gmail.com" , sex: "male"   , date_of_birth: "17/04/1990", password: "678", password_confirmation: "678"
-u7  =  User.create first_name: "Juan"   , last_name: "Pardini"  , email: "jfpardini@gmail.com"    , sex: "male"   , date_of_birth: "10/05/1988", password: "789", password_confirmation: "789"
-u8  =  User.create first_name: "Sam"    , last_name: "Leach"    , email: "sameleach@gmail.com"    , sex: "male"   , date_of_birth: "21/02/1979", password: "321", password_confirmation: "321"
-u9  =  User.create first_name: "Charles", last_name: "Munat"    , email: "charlesmunat@gmail.com" , sex: "male"   , date_of_birth: "25/12/1959", password: "432", password_confirmation: "432"
-u10 =  User.create first_name: "Soner"  , last_name: "Ozenc"    , email: "sonerozenc@gmail.com"   , sex: "male"   , date_of_birth: "04/02/1981", password: "543", password_confirmation: "543"
-
-p1  = Profile.create display_name: "kimsze"         , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-p2  = Profile.create display_name: "maltezpedro"    , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-p3  = Profile.create display_name: "robanderson"    , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-p4  = Profile.create display_name: "4thfloormonkey" , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-p5  = Profile.create display_name: "ggray"          , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-p6  = Profile.create display_name: "jillock"        , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-p7  = Profile.create display_name: "jpardi"         , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-p8  = Profile.create display_name: "bigdata"        , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-p9  = Profile.create display_name: "santa"          , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-p10 = Profile.create display_name: "visualguy"      , description: "I'm a kitteh!", avatar: "http://placekitten.com/500/500"
-
-u1.profile  = p1
-u2.profile  = p2
-u3.profile  = p3
-u4.profile  = p4
-u5.profile  = p5
-u6.profile  = p6
-u7.profile  = p7
-u8.profile  = p8
-u9.profile  = p9
-u10.profile = p10
+u1  =  User.create first_name: "Kim"    , last_name: "Szelong"  , email: "kimszelong@gmail.com"   , sex: "female" , date_of_birth: "20/07/1988", password: "123", password_confirmation: "123", display_name: "kimsze"         , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
+u2  =  User.create first_name: "Pedro"  , last_name: "Maltez"   , email: "maltezpedro@gmail.com"  , sex: "male"   , date_of_birth: "01/01/1993", password: "234", password_confirmation: "234", display_name: "maltezpedro"    , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
+u3  =  User.create first_name: "Rob"    , last_name: "Anderson" , email: "robanderson@gmail.com"  , sex: "male"   , date_of_birth: "12/06/1985", password: "345", password_confirmation: "345", display_name: "robanderson"    , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
+u4  =  User.create first_name: "Toby"   , last_name: "Sims"     , email: "tobysims@gmail.com"     , sex: "male"   , date_of_birth: "23/10/1986", password: "456", password_confirmation: "456", display_name: "4thfloormonkey" , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
+u5  =  User.create first_name: "George" , last_name: "Gray"     , email: "georgegray@gmail.com"   , sex: "male"   , date_of_birth: "07/12/1981", password: "567", password_confirmation: "567", display_name: "ggray"          , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
+u6  =  User.create first_name: "James"  , last_name: "Willock"  , email: "jameswillock@gmail.com" , sex: "male"   , date_of_birth: "17/04/1990", password: "678", password_confirmation: "678", display_name: "jillock"        , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
+u7  =  User.create first_name: "Juan"   , last_name: "Pardini"  , email: "jfpardini@gmail.com"    , sex: "male"   , date_of_birth: "10/05/1988", password: "789", password_confirmation: "789", display_name: "jpardi"         , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
+u8  =  User.create first_name: "Sam"    , last_name: "Leach"    , email: "sameleach@gmail.com"    , sex: "male"   , date_of_birth: "21/02/1979", password: "321", password_confirmation: "321", display_name: "bigdata"        , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
+u9  =  User.create first_name: "Charles", last_name: "Munat"    , email: "charlesmunat@gmail.com" , sex: "male"   , date_of_birth: "25/12/1959", password: "432", password_confirmation: "432", display_name: "santa"          , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
+u10 =  User.create first_name: "Soner"  , last_name: "Ozenc"    , email: "sonerozenc@gmail.com"   , sex: "male"   , date_of_birth: "04/02/1981", password: "543", password_confirmation: "543", display_name: "visualguy"      , description: "I'm a kitteh!", avatar_url: "http://placekitten.com/500/500"
 
 g1  = Game.create name: "Age of Empires"        , description: "The greatest game on earth.", poster: "http://placesheen.com/400/500", background: "http://placehold.it/1200x800"
 g2  = Game.create name: "Meh, sheep"            , description: "The greatest game on earth.", poster: "http://placesheen.com/400/500", background: "http://placehold.it/1200x800"
@@ -142,17 +119,17 @@ grev9   = GameReview.create user: u9   , game: g4  , title: "Na Na Na Na Na Na N
 grev10  = GameReview.create user: u10  , game: g3  , title: "Spiderman, Spiderman, does whatever a spider can."  , body: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
 grev11  = GameReview.create user: u2   , game: g5  , title: "Fighting CRIME!"                                    , body: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
 
-grat1   = GameRating.create user: u1   , rating: 6   , game_review: grev1   
-grat2   = GameRating.create user: u2   , rating: 10  , game_review: grev2   
-grat3   = GameRating.create user: u3   , rating: 9   , game_review: grev3   
-grat4   = GameRating.create user: u4   , rating: 5   , game_review: grev4   
-grat5   = GameRating.create user: u5   , rating: 1   , game_review: grev5   
-grat6   = GameRating.create user: u6   , rating: 2   , game_review: grev6   
-grat7   = GameRating.create user: u7   , rating: 9   , game_review: grev7   
-grat8   = GameRating.create user: u8   , rating: 4   , game_review: grev8   
-grat9   = GameRating.create user: u9   , rating: 3   , game_review: grev9   
-grat10  = GameRating.create user: u1   , rating: 2   , game_review: grev10  
-grat11  = GameRating.create user: u10  , rating: 1   , game_review: grev11  
+grat1   = GameRating.create user: u1   , rating: 6   , game: g1 , game_review: grev1   
+grat2   = GameRating.create user: u2   , rating: 10  , game: g1 , game_review: grev2   
+grat3   = GameRating.create user: u3   , rating: 9   , game: g2 , game_review: grev3   
+grat4   = GameRating.create user: u4   , rating: 5   , game: g1 , game_review: grev4   
+grat5   = GameRating.create user: u5   , rating: 1   , game: g2 , game_review: grev5   
+grat6   = GameRating.create user: u6   , rating: 2   , game: g3 , game_review: grev6   
+grat7   = GameRating.create user: u7   , rating: 9   , game: g4 , game_review: grev7   
+grat8   = GameRating.create user: u8   , rating: 4   , game: g5 , game_review: grev8   
+grat9   = GameRating.create user: u9   , rating: 3   , game: g4 , game_review: grev9   
+grat10  = GameRating.create user: u1   , rating: 2   , game: g3 , game_review: grev10  
+grat11  = GameRating.create user: u10  , rating: 1   , game: g5 , game_review: grev11  
 grat12  = GameRating.create user: u2   , rating: 8   , game: g1
 grat13  = GameRating.create user: u3   , rating: 7   , game: g2
 grat14  = GameRating.create user: u4   , rating: 6   , game: g3

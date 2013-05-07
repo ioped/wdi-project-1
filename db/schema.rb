@@ -44,9 +44,6 @@ ActiveRecord::Schema.define(:version => 20130426124909) do
     t.datetime "updated_at",      :null => false
   end
 
-  add_index "games", ["game_ratings_id"], :name => "index_games_on_game_ratings_id"
-  add_index "games", ["game_reviews_id"], :name => "index_games_on_game_reviews_id"
-
   create_table "games_genres", :id => false, :force => true do |t|
     t.integer "game_id"
     t.integer "genre_id"
@@ -67,24 +64,19 @@ ActiveRecord::Schema.define(:version => 20130426124909) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "profiles", :force => true do |t|
-    t.string   "display_name"
-    t.text     "description"
-    t.string   "avatar"
-    t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "email"
+    t.string   "display_name"
+    t.string   "steamid"
+    t.string   "steam64id"
+    t.text     "description"
+    t.string   "avatar_url"
     t.string   "first_name"
     t.string   "last_name"
     t.date     "date_of_birth"
     t.string   "sex"
     t.string   "password_salt"
     t.string   "password_hash"
-    t.integer  "profile_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
