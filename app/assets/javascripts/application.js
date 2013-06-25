@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require_tree .
 
 $(function() {
@@ -45,14 +44,11 @@ $(function() {
       url: $(this)[0].href,
       dataType: 'html',
       success: function(detail) {
-        $('#main_area').html(detail);
+        $('#main').html(detail);
       }
     });
     return false;
   };
-
-
-
 
 
 
@@ -63,10 +59,6 @@ $(function() {
       url: '/welcome',
       dataType: 'html',
       success: function(main) {
-        // console.log(main);
-        // console.log(a);
-        // console.log(b);
-        // console.log(c);
         $('#main_area').html(main);
         do_the_chart();
       }

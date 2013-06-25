@@ -1,0 +1,62 @@
+.gamelist {
+  list-style: none;
+  padding: 0 0 0.4em;
+  margin: 0;
+  background: $brand-coolblu;
+  color: $white;
+  @include respond-to(spider) {
+    position: fixed;
+    overflow: scroll;
+    top: 0;
+    right: 1em;
+    z-index: 997;
+    width: 36%;
+    margin: 5.5em 0 0 0;
+    padding: 0.5em 1em 8em;
+    height: 100%;
+    max-width: 23em;
+  }
+  li {
+    text-align: center;
+    margin-bottom: 0.8em;
+    padding-top: 0.8em;
+    border-top: 1px solid #cccccc;
+    &:first-child {
+      border-top: none;
+    }
+    @include respond-to(spider) {
+      text-align: left;
+    }
+    a {
+      color: $lightgrey;
+      display: block;
+    }
+  }
+}
+
+
+section[role="main"] {
+  @extend .cf;
+  margin:1em 0 3em;
+  padding: 0 1em;
+  img {
+    display: block;
+    margin: 0 auto 1em;
+  }
+  @include respond-to(spider) {
+    position: absolute;
+    top:5em;
+    margin:2em 25em 3em 0em;
+    min-width: 30em;
+    p {
+      font-size: 1.4em;
+    }
+  }
+}
+
+
+.disqus {
+  border-top: 6px solid $brand-blu;
+  margin: 2em 0;
+  padding-top: 1em;
+}

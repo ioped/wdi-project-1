@@ -2,9 +2,7 @@ class SiteController < ApplicationController
   before_filter :authorize, except: [:index, :login, :signup]
 
   def index
-
     @games = Game.all.sort
-
   end
 
   ###############################
@@ -69,51 +67,56 @@ class SiteController < ApplicationController
 
 
 
+
+
+#####################################
+
+
   # def check_for_and_add_user_steam_games
 
   #   results.each do |game|
-  #     game_id = game['appid']
+  #     steam_game_id = game['appid']
       
   #     if Game.
-  #     if game['appid'] !=
+  #     if game['appid'] != 
   #       Game.create name: game['name'], steam_game_id: game['appid']
   #     end
   #   end
   # end
 
 
-  # # Check games owned by user
-  # def check_games
-  #   mysteam64id = "76561198054201790"
+  # Check games owned by user
+  def check_games
+    mysteam64id = "76561198054201790"
 
-  #   usergames = JSON.parse(open("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=47759AFAA400BE100A45F20F9A918C3E&steamid=" + @user.steam64id + "&format=json&include_appinfo=1&include_played_free_games=1").read)
+    usergames = JSON.parse(open("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=47759AFAA400BE100A45F20F9A918C3E&steamid=" + @user.steam64id + "&format=json&include_appinfo=1&include_played_free_games=1").read)
     
-  #   temp_user_game_v = usergames["response"]["games"]
+    temp_user_game_v = usergames["response"]["games"]
 
-  #   num_steam_games = temp_user_game_v["game_count"]
+    num_steam_games = temp_user_game_v["game_count"]
 
-  #   temp_user_game_v.each do |g|
-  #     temp_app_id = g['appid']
-  #     temp_game_name = g['name']
+    temp_user_game_v.each do |g|
+      temp_app_id = g['appid']
+      temp_game_name = g['name']
 
-  #     if !Game.exists?(:steam_game_id => temp_app_id)
-  #       newgame = Game.create(name: temp_game_name, steam_game_id: temp_app_id)
-  #     end
+      if !Game.exists?(steam_game_id: temp_app_id)
+        newgame = Game.create(name: temp_game_name, steam_game_id: temp_app_id)
+      end
 
-  #     @user.games << newgame
+      @user.games << newgame
 
-  #   end
-  # end
+    end
+  end
 
 
-  # def check_steam_info
-  #   player_summary = JSON.parse(open("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=47759AFAA400BE100A45F20F9A918C3E&steamids=" + @user.steam64id ).read)
-  # end
+  def check_steam_info
+    player_summary = JSON.parse(open("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=47759AFAA400BE100A45F20F9A918C3E&steamids=" + @user.steam64id ).read)
+  end
 
-  # # Set steam64id by checking vanityurl
-  # def check_steam_64_id
-  #   @user.steam64id = JSON.parse(open("http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=47759AFAA400BE100A45F20F9A918C3E&vanityurl=" + @user.steamid ).read)
-  # end
+  # Set steam64id by checking vanityurl
+  def check_steam_64_id
+    @user.steam64id = JSON.parse(open("http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=47759AFAA400BE100A45F20F9A918C3E&vanityurl=" + @user.steamid ).read)
+  end
 
 
 

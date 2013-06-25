@@ -1,17 +1,20 @@
-<ul>
+<ul class="grev-list">
   <% @game.game_reviews.each do |grev| %>
     <ul>
-      <li>
-        <div class="review-reviewer-name"> <%= grev.user.display_name %> </div>
+      <li class="review-reviewer-avatar">
+        <img class="rounded" src="<%= grev.user.avatar_url %>" alt="">
       </li>
-      <li>  
-        <div class="review-rating"> <%= grev.game_rating.rating %> </div>
+      <li class="review-reviewer-name">
+        <%= grev.user.display_name %>
       </li>
-      <li>  
-        <div class="review-title" > <%= grev.title %> </div>
+      <li class="review-rating">  
+        Rating: <%= grev.game_rating.rating %>
       </li>
-      <li>
-        <div class="review-body"> <%= grev.body %> </div>
+      <li class="review-title">
+        <%= grev.title %>
+      </li>
+      <li class="review-body">
+        <%= grev.body %>
       </li>
     </ul>
   <% end %>

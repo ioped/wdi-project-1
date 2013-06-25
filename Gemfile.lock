@@ -38,13 +38,6 @@ GEM
     builder (3.0.4)
     bzip2-ruby (0.2.7)
     coderay (1.0.9)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.6.2)
     commonjs (0.2.6)
     debug_inspector (0.0.2)
     erubis (2.7.0)
@@ -72,6 +65,8 @@ GEM
     pg (0.15.1)
     polyglot (0.3.3)
     postgres-pr (0.6.3)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -137,12 +132,12 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   better_errors
   binding_of_caller
-  coffee-rails (~> 3.2.1)
   jquery-rails
   json
   less-rails
   pg
   postgres-pr
+  quiet_assets
   rails (= 3.2.13)
   rest-client
   sass-rails (~> 3.2.3)

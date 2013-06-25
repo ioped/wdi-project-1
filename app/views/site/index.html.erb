@@ -1,12 +1,10 @@
-<div id="everything">
+<section role="main" id="everything">
   <% if current_user %>
-    <div class="row">
+    <div>
       <%= render partial: 'welcome_screen' %>
       <%= render partial: 'game_sidebar' %>
-    </div>
-    <div id="chart_data">
     </div>
   <% else %>
     <%= render partial: 'hello_stranger' %>
   <% end %>
-</div>
+</section>

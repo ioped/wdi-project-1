@@ -1,7 +1,21 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  attr_accessible :date_of_birth, :email, :first_name, :last_name, :sex, :games, :steamid, :steam64id, :password, :password_confirmation, :display_name, :description, :avatar_url
+  attr_accessible(
+    :date_of_birth,
+    :email,
+    :first_name,
+    :last_name,
+    :sex,
+    :games,
+    :steamid,
+    :steam64id,
+    :password,
+    :password_confirmation,
+    :display_name,
+    :description,
+    :avatar_url
+  )
 
   attr_accessor :password
 

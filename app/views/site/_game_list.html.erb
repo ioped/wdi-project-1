@@ -1,4 +1,4 @@
-<ul>
+<ul class="gamelist">
   <% @games.each do |g| %>
     <li>
       <%= link_to g.name, game_detail_path(g.id), :class => 'gamejax' %>

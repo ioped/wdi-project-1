@@ -7,31 +7,7 @@ class UsersController < ApplicationController
     render json: @users, except: [:password_hash, :password_salt]
   end
 
-  def show
-    @user = User.find(params[:id])
-
-    render json: @user, except: [:password_hash, :password_salt]
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def edit
-    @user = current_user
-    
-  end
-
-
-
   def create
-    @user = User.new(params[:user])
-    if @user.save
-      redirect_to root_url, notice: "Signed up!"
-    end
-  end
-
-  def signup
     @user = User.new(params[:user])
     if @user.save
       redirect_to root_url, notice: "Signed up!"
@@ -40,22 +16,27 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
+  def new
+    @user = User.new
+  end
+
+  def show
     @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
-    if @user.save
+
+    render json: @user, except: [:password_hash, :password_salt]
+  end
+
+  def update
+    current_user.update_attributes(params[:user])
+    if current_user.save
       redirect_to root_url, notice: "Account updated."
     else
-      redirect_to root_url, notice: "Failed to update account."
+      redirect_to root_url, notice: "Failed to update account. Please enter your password."
     end
   end
 
   def destroy
     @user = User.find(params[:id])
-  end
-
-  def account
-    @edit_user = User.find(session[:user_id])
   end
 
 end

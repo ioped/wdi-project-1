@@ -1,0 +1,43 @@
+/* spacing */
+$baselineheight		: 1.4;
+$basespacingunit	: 20px;
+$basepadding			: 1em;
+
+/* type */
+$serif					: "Minion Pro", Georgia, "Times New Roman", Times, serif;
+$sans-serif			: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$heading-font		: "Avenir Next", $sans-serif;
+$monospace      : Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+
+/* greyscale */
+$black				: rgb(0,0,0);
+$darkgrey			: rgb(30,30,30);
+$charcoalgrey	: rgb(87, 87, 87);
+$midgrey			: rgb(207,207,207);
+$lightgrey		: rgb(242,242,242);
+$white				: rgb(255,255,255);
+$offwhite			: rgb(246,246,255);
+
+/* brand color palette */
+$brand-blu 		: rgb(44, 62, 80);
+$brand-coolblu: rgb(170, 68, 85);
+$brand-alpha	: rgb(174, 177, 177);
+$brand-beta		: rgb(102, 112, 113);
+$brand-gamma	: rgb(41, 128, 185);
+$brand-zeta 	: rgb(199,115,129);
+
+/* links */
+$linkcol				: $brand-alpha;
+$linkcolhover		: darken($linkcol, 10);
+$linkcolvisited	: $linkcolhover;
+$linkcolfocus		: $linkcolhover;
+
+/* more color palettes */
+$greengo 				: rgb(89, 188, 167);
+$alertcolor 		: rgb(237, 120, 60);
+$errorcolor 		: rgb(194, 98, 85);
+$dangercolor 		: rgb(218,79,73);
+$infocolor 			: rgb(44, 62, 80);
+$inverscolor 		: rgb(65,65,65);
+$successcolor 	: rgb(129,181,88);
+$warningcolor 	: rgb(250,167,50);

@@ -22,27 +22,30 @@ WdiProject1::Application.routes.draw do
   ######   USER ROUTES   ########
   ###############################
 
-  get     "/users"           => "users#index"    , as: :list_users
-  get     "/users/new"       => "users#new"      , as: :users
-  post    "/users"           => "users#create"   , as: :create_user
-  get     "/users/:id"       => "users#show"     , as: :user
-  get     "/users/:id/edit"  => "users#edit"     , as: :edit_user
-  put     "/users/:id"       => "users#update"
-  delete  "/users/:id"       => "users#destroy"  , as: :destroy_user
-  post    "/signup"          => "users#signup"   , as: :signup
+  # get     "/users"           => "users#index"    , as: :list_users
+  # get     "/users/new"       => "users#new"      , as: :users
+  # post    "/users"           => "users#create"   , as: :create_user
+  # get     "/users/:id"       => "users#show"     , as: :user
+  # get     "/users/:id/edit"  => "users#edit"     , as: :edit_user
+  # put     "/users/:id"       => "users#update"
+  # delete  "/users/:id"       => "users#destroy"  , as: :destroy_user
+
+  resources :users
 
 
   ###############################
   ######    GAME ROUTES   #######
   ###############################
 
-  get     "/games"           => "games#index"
-  get     "/games/new"       => "games#new"      , as: :add_game
-  post    "/games"           => "games#create"   , as: :create_game
-  get     "/games/:id"       => "games#show"     , as: :show_game
-  get     "/games/:id/edit"  => "games#edit"     , as: :edit_game
-  put     "/games/:id"       => "games#update"   , as: :update_game
-  delete  "/games/:id"       => "games#destroy"  , as: :destroy_game
+  # get     "/games"           => "games#index"
+  # get     "/games/new"       => "games#new"      , as: :add_game
+  # post    "/games"           => "games#create"   , as: :create_game
+  # get     "/games/:id"       => "games#show"     , as: :show_game
+  # get     "/games/:id/edit"  => "games#edit"     , as: :edit_game
+  # put     "/games/:id"       => "games#update"   , as: :update_game
+  # delete  "/games/:id"       => "games#destroy"  , as: :destroy_game
+
+  resources :games
 
 
   ###############################

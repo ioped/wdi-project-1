@@ -1,0 +1,41 @@
+a.btn,
+ .btn{
+  @include rounded(4px);
+  display:inline-block;
+  margin: 0 0 0.8em;
+  padding:1em 1.4em;
+  border:none;
+  background: $infocolor;
+  color: $white;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+  font-family: $sans-serif;
+  line-height:1;
+  cursor:pointer;
+  &:hover,
+  &.current{
+    background: darken($infocolor, 14);
+  }
+  &.btn-go{
+    background: $greengo;
+    &:hover{
+      background: darken($greengo, 20);
+    }
+  }
+  &.btn-delete{
+    background: $errorcolor;
+    &:hover{
+      background: darken($errorcolor, 20);
+    }
+  }
+  &.btn-home-go{
+    font-size: 1.1em;
+    margin: 2em 0 3em;
+  }
+  &.btn-top{
+    margin-top: 1em;
+  }
+}

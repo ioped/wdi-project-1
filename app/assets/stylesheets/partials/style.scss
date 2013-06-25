@@ -1,0 +1,179 @@
+/* ROOT
+  ========================================================================== */
+  @import "reset";
+  @import "mixins";
+  @import "variables";
+	* {
+		/* apply a natural box layout model to all elements - paul irish*/
+		@include box-sizing();
+	}
+  @-ms-viewport { width: device-width; }
+  @viewport {  width: device-width; }
+	html {
+    font-size: 100%;
+    background: rgb(208, 219, 229);
+	}
+	body {
+		min-width:252px;
+		width : 100%;
+		margin : 0 auto;
+		padding : 0;
+		font-family: $sans-serif;
+		color: $brand-beta;
+		-webkit-font-smoothing: antialiased;
+	}
+  .wrapper {
+    @extend .cf;
+    position: relative;
+    max-width: 56em;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+
+//alerts
+
+  .alert {
+    background-color: #aa4455;
+    color: $white;
+    padding: 0.1em 1em;
+    .close {
+      color: $white;
+      float: right;
+    }
+  }
+
+
+// Game Reviews
+
+  .grev-list {
+    li {
+      list-style: none;
+    }
+  }
+
+  .review-reviewer-avatar {
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+  }
+
+  .review-reviewer-name {
+    display: inline-block;
+    margin-left: 1em;
+    text-transform: uppercase;
+  }
+
+  .review-rating {
+    display: inline-block;
+    float: right;
+  }
+
+  .review-title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .rounded {
+    border-radius: 3em;
+  }
+
+
+
+
+	/* Disable iOS/WinMobile font size changes */
+	@media screen and (max-width: 600px), screen and (max-device-width: 480px) {
+		html {
+			-o-text-size-adjust: none;
+			-ms-text-size-adjust: none;
+			-moz-text-size-adjust: none;
+			-webkit-text-size-adjust: none;
+		}
+	}
+
+
+/* GLOBAL LINKS
+  ========================================================================== */
+	a {
+		color: $linkcol;
+		text-decoration: none;
+		&:visited {
+			color: $linkcolvisited;
+			text-decoration: none;
+		}
+		&:hover {
+			color: $linkcolhover;
+			text-decoration: underline;
+		}
+		&:focus {
+			outline: thin dotted;
+			color: $linkcolfocus;
+		}
+	}
+	a:hover,
+	a:active {
+		outline : 0;
+	}
+
+
+/* BITS
+  ========================================================================== */
+	@import "typography";
+  @import "forms";
+  @import "buttons";
+  @import "helpers";
+
+
+
+/* FIGURES & IMAGES
+  ========================================================================== */
+  hr {
+		display : block;
+		margin : 1em 0;
+		padding : 0;
+		height : 1px;
+		border : 0;
+		border-top : 1px solid rgb(206, 206, 206);
+		border-bottom : 1px solid $white;
+	}
+  img {
+    max-width: 100%;
+    border-width: 0;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+  }
+  svg:not(:root) {
+  	overflow: hidden;
+  }
+  figure {
+  	margin-bottom: $baselineheight;
+    img {
+    	margin-bottom: $baselineheight / 4;
+    }
+    figcaption {
+	    display: block;
+	    font-weight: normal;
+	    font-size : 0.95em ;
+	    color: $darkgrey;
+    }
+	}
+
+
+/* LAYOUT
+  ========================================================================== */
+  @import "layout";
+
+
+/* MAIN SECTIONS
+  ========================================================================== */
+  @import "header";
+  @import "games";
+
+
+/* PRINT STYLES
+  ========================================================================== */
+	@import "print";
+
+
+
