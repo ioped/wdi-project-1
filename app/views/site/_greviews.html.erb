@@ -1,6 +1,6 @@
 <ul class="grev-list">
   <% @game.game_reviews.each do |grev| %>
-    <ul>
+    <ul class="grev-item">
       <li class="review-reviewer-avatar">
         <img class="rounded" src="<%= grev.user.avatar_url %>" alt="">
       </li>

@@ -25,7 +25,7 @@ u10 =  User.create first_name: "Soner"  , last_name: "Ozenc"    , email: "sonero
 
 g1  = Game.create name: "Age of Empires"        , description: "The greatest game on earth.", poster: "http://placekitten.com/400/500", background: "http://placekitten.com/1200/800"
 g2  = Game.create name: "Meh, sheep"            , description: "The greatest game on earth.", poster: "http://placekitten.com/400/500", background: "http://placekitten.com/1200/800"
-g3  = Game.create name: "World of Warcraft"     , description: "Fucking shit."              , poster: "http://placekitten.com/400/500", background: "http://placekitten.com/1200/800"
+g3  = Game.create name: "World of Warcraft"     , description: "Not so great."              , poster: "http://placekitten.com/400/500", background: "http://placekitten.com/1200/800"
 g4  = Game.create name: "Diablo"                , description: "The greatest game on earth.", poster: "http://placekitten.com/400/500", background: "http://placekitten.com/1200/800"
 g5  = Game.create name: "Diablo 2"              , description: "The greatest game on earth.", poster: "http://placekitten.com/400/500", background: "http://placekitten.com/1200/800"
 g6  = Game.create name: "Diablo 3"              , description: "The greatest game on earth.", poster: "http://placekitten.com/400/500", background: "http://placekitten.com/1200/800"

@@ -110,7 +110,8 @@ class SiteController < ApplicationController
 
 
   def check_steam_info
-    player_summary = JSON.parse(open("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=47759AFAA400BE100A45F20F9A918C3E&steamids=" + @user.steam64id ).read)
+    p_summary = JSON.parse(open("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=47759AFAA400BE100A45F20F9A918C3E&steamids=" + @user.steam64id ).read)
+    player_avatar = p_summary['response']['avatarfull']
   end
 
   # Set steam64id by checking vanityurl

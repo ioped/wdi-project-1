@@ -10,6 +10,7 @@ gem 'rest-client'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'steam-condenser'
 gem 'jquery-rails'
+gem 'gon'
 
 group :development do
   gem "better_errors"
